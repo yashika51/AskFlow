@@ -1,1 +1,4 @@
-env
+#ignore API Key
+.env
+#pycache
+__pycache__
