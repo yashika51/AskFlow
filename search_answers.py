@@ -5,14 +5,11 @@ Functions:
 - Get top 5 answers from the site based on the question ids
 """
 
-import requests
 from dotenv import load_dotenv
 load_dotenv()
 import os
 import urllib.request
 import json
-import gzip
-from io import StringIO
 from bs4 import BeautifulSoup
 
 
