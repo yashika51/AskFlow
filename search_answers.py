@@ -17,12 +17,11 @@ from get_error import main
 
 class ask():
 
-    def __init__(self,file_name):
+    def __init__(self,error_list):
         self.key=os.environ.get("key")
-        #error_message is a list of errors, appending python command with file_name
-        self.error_list=main("python"+" "+file_name)
-        #get 2 indices as error_message
-        self.error_message=self.error_list[0]+self.error_list[1]
+        #error_message is a list of errors
+        self.error_list=error_list
+        self.error_message=' '.join(error_list)
     
     def get_question_id(self):
         """

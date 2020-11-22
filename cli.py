@@ -3,6 +3,7 @@ import requests
 from pyfiglet import Figlet
 #from get_error import main as get_error
 from get_error import run_command
+from search_answers import ask
 
 __author__ = "Team 2 Sprint-4"
 
@@ -34,6 +35,9 @@ def search(query):
         #Print all relevant search info
         print("Relevant information for search: ")
         print(relevant_info)
+        a=ask(relevant_info)
+        answers=a.get_answer()
+        print(answers)
         return(relevant_info)
     else:
         print("There was no error with the script")
