@@ -8,9 +8,11 @@ Functions:
 from dotenv import load_dotenv
 load_dotenv()
 import os
+import requests
 import urllib.request
 import json
 from bs4 import BeautifulSoup
+import get_error
 
 
 class ask():
