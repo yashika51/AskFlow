@@ -26,6 +26,7 @@ def main(argv):
         #Print all relevant search info
         print("Relevant information for search: ")
         print(relevant_info)
+        return(relevant_info)
     else:
         print("There was no error with the script")
 
