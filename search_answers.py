@@ -53,7 +53,7 @@ class ask():
         c=0
         for i in data['items']:
             ans=i.get('body')
-            soup = BeautifulSoup(ans)
+            soup = BeautifulSoup(ans,features="html.parser")
             answers.append(soup.get_text().replace('\n','\n\n'))
             c+=1
             if c==count:
