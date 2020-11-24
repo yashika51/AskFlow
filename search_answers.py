@@ -12,14 +12,16 @@ import requests
 import urllib.request
 import json
 from bs4 import BeautifulSoup
-import get_error
+from get_error import main
 
 
 class ask():
 
-    def __init__(self,error):
+    def __init__(self,error_list):
         self.key=os.environ.get("key")
-        self.error_message=error
+        #error_message is a list of errors
+        self.error_list=error_list
+        self.error_message=' '.join(error_list)
     
     def get_question_id(self):
         """
@@ -54,7 +56,8 @@ class ask():
         for i in data['items']:
             ans=i.get('body')
             soup = BeautifulSoup(ans,features="html.parser")
-            answers.append(soup.get_text().replace('\n','\n\n'))
+            answers.append(soup.get_text().replace('\n',' '))
+            print(soup.get_text().replace('\n',' '))
             c+=1
             if c==count:
                 break
