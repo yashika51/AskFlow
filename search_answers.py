@@ -21,7 +21,8 @@ class ask():
         self.key=os.environ.get("key")
         #error_message is a list of errors
         self.error_list=error_list
-        self.error_message=' '.join(error_list)
+        # self.error_message=' '.join(error_list)
+        self.error_message='unsupported operand type(s) for int and str'
     
     def get_question_id(self):
         """
@@ -33,7 +34,7 @@ class ask():
         jData=requests.get(url)
         data=jData.json()
         question_ids=[]
-        for i in data['items']:
+        for i in data['items'][:4]:
             ques_id=i.get('question_id')
             question_ids.append(str(ques_id))
         #query accepts ids only delimited by semicolon
@@ -53,7 +54,7 @@ class ask():
         data=jData.json()
         answers=[]
         c=0
-        for i in data['items']:
+        for i in data['items'][:4]:
             ans=i.get('body')
             soup = BeautifulSoup(ans,features="html.parser")
             answers.append(soup.get_text().replace('\n',' '))
