@@ -20,7 +20,7 @@ def main(argv):
 
     #If there's an error message, get the relevant info to search
     if error_message:
-        relevant_info = error_message.split(":") #will split error into error type, and error info
+        relevant_info = error_message[2] #will split error into error type, and error info
         #Find what language the script is in
         determine_language()
         #Print all relevant search info

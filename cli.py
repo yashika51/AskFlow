@@ -1,6 +1,7 @@
 import click
 import requests
-from pyfiglet import Figlet
+from pyfiglet import Figlet, figlet_format
+from termcolor import cprint
 #from get_error import main as get_error
 from get_error import run_command
 from search_answers import ask
@@ -12,8 +13,9 @@ def main():
     """
     CLI for querying StackExchange API
     """
+
 f = Figlet(font='slant')
-print(f.renderText('AskFlow CLI'))
+cprint(figlet_format('AskFlow CLI', font='slant'), "cyan")
 
 @main.command()
 @click.argument('query')
