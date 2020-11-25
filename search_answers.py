@@ -23,8 +23,9 @@ class ask():
         self.answer_filter=os.environ.get('filter')
         #error_message is a list of errors
         self.error_list=error_list
-        # self.error_message=' '.join(error_list)
-        self.error_message='unsupported operand type(s) for int and str'
+        self.error_message=' '.join(error_list)
+        #levy's hardcoded line
+        #self.error_message='unsupported operand type(s) for int and str'
     
     def get_question_id(self):
         """
