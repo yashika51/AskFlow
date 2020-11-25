@@ -1,5 +1,7 @@
 # AskFlow
 
+<img src="AskFlow\AskFlow_logo.jpg"/>
+
 StackOverflow is now just one command away. Let AskFlow handle your errors!
 
 AskFlow is a CLI tool built with an intention to access StackOverflow without leaving the (comfy!)terminal. It not only just access StackOverflow, it also scans your python script to find error automatically. 
@@ -39,5 +41,26 @@ To navigate between the answers
 - Colored Interface
 - Easy to Install 
 - Compatible with Windows and Linux
+
+# What's next?
+
+In future we plan to add features providing more options to the user including
+- Posting the question from the terminal
+- Upvoting/Downvoting from the terminal
+- Answering from ther terminal 
+and much more.
+
+# Team
+
+AskFlow is built by the fantastic team of three developers:
+- [Yashika](https://github.com/yashika51/) - [Arlyn](https://github.com/Acrylami/) - [Levy](https://github.com/Levy-Naibei)
+
+# Feedback
+
+We always love to hear suggestions and stories. If you liked AskFlow, support us by giving a :star:. If you'd like to reach out, you can find us from our individual Github profiles. 
+
+# Other Links
+
+Find us on Devpost https://devpost.com/software/askflow
 
 
