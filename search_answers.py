@@ -24,6 +24,7 @@ class ask():
         #error_message is a list of errors
         self.error_list=error_list
         self.error_message=' '.join(error_list)
+        # self.error_message='unsupported operand type(s) for int and str'
     
     def get_question_id(self):
         """
