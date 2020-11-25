@@ -5,6 +5,7 @@ from termcolor import cprint
 #from get_error import main as get_error
 from get_error import run_command
 from search_answers import ask
+from colorama import init
 
 __author__ = "Team 2 Sprint-4"
 
@@ -13,8 +14,8 @@ def main():
     """
     CLI for querying StackExchange API
     """
-
-cprint(figlet_format('AskFlow CLI', font='slant'), "cyan")
+    init(convert=True)
+    cprint(figlet_format('AskFlow CLI', font='slant'), "cyan")
 
 @main.command()
 @click.argument('query')
@@ -34,8 +35,8 @@ def search(query):
         relevant_info = error_message.split(":") #will split error into error type, and error info
 
         #Print all relevant search info
-        print("Relevant information for search: ")
-        print(relevant_info)
+        #print("Relevant information for search: ")
+        #print(relevant_info)
         a=ask(relevant_info)
         answers=a.get_answer()
         return(relevant_info)
