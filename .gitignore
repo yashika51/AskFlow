@@ -6,4 +6,5 @@ env
 __pycache__
 #vs code
 .vscode
-
+#csv file
+g4g.csv

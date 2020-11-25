@@ -13,7 +13,8 @@ import urllib.request
 import json
 from bs4 import BeautifulSoup
 from get_error import main
-
+import csv
+import io
 
 class ask():
 
@@ -60,10 +61,28 @@ class ask():
                 ans=i.get('body')
                 soup = BeautifulSoup(ans,features="html.parser")
                 answers.append(soup.get_text().replace('\n',' '))
-                print(soup.get_text().replace('\n',' '))
+                #print(soup.get_text().replace('\n',' '))
                 c+=1
                 if c==count:
                     break
+
+
+        # opening the csv file in 'w' mode 
+        file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
+          
+        with file: 
+            # identifying header   
+            header = ['Number', 'Answer', 'Current'] 
+            writer = csv.DictWriter(file, fieldnames = header) 
+            writer.writeheader() 
+            # writing data row-wise into the csv file
+            count = 1
+            for answer in answers:
+                if count==1:
+                    writer.writerow({'Number' : count, 'Answer': answer, 'Current': True})
+                else:
+                    writer.writerow({'Number' : count, 'Answer': answer, 'Current': False})
+                count += 1
         
         return answers
 
