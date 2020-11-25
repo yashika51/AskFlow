@@ -14,6 +14,9 @@ import json
 from bs4 import BeautifulSoup
 from get_error import main
 import click
+import csv
+import io
+
 
 class ask():
 
@@ -56,18 +59,44 @@ class ask():
         answers=[]
         c=0
 
-        colors = ['green','magenta']
 
         for i in data['items']:   
                 ans=i.get('body')
                 soup = BeautifulSoup(ans,features="html.parser")
+
+                #levys
                 answers.append(soup.get_text())
+                '''
+                #moved to cli.py
                 print('\n')
                 click.echo(click.style(f"        ************** ", fg=colors[0]))
                 click.echo(click.style(soup.get_text(), fg=colors[1]))
+                '''
+                #arlyns
+                #answers.append(soup.get_text().replace('\n',' '))
+
+
                 c+=1
                 if c==count:
                     break
+
+
+        # opening the csv file in 'w' mode 
+        file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
+          
+        with file: 
+            # identifying header   
+            header = ['Number', 'Answer', 'Current'] 
+            writer = csv.DictWriter(file, fieldnames = header) 
+            writer.writeheader() 
+            # writing data row-wise into the csv file
+            count = 1
+            for answer in answers:
+                if count==1:
+                    writer.writerow({'Number' : count, 'Answer': answer, 'Current': True})
+                else:
+                    writer.writerow({'Number' : count, 'Answer': answer, 'Current': False})
+                count += 1
         
         return answers
 
