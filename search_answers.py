@@ -72,15 +72,17 @@ class ask():
           
         with file: 
             # identifying header   
-            header = ['Number', 'Answer'] 
+            header = ['Number', 'Answer', 'Current'] 
             writer = csv.DictWriter(file, fieldnames = header) 
             writer.writeheader() 
             # writing data row-wise into the csv file
             count = 1
             for answer in answers:
-                writer.writerow({'Number' : count,  
-                                 'Answer': answer})
-                count = count+1
+                if count==1:
+                    writer.writerow({'Number' : count, 'Answer': answer, 'Current': True})
+                else:
+                    writer.writerow({'Number' : count, 'Answer': answer, 'Current': False})
+                count += 1
         
         return answers
 

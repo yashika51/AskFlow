@@ -50,9 +50,97 @@ def search(query):
 
 @main.command()
 def next():
-    #file = io.open('g4g.csv', 'r', newline ='', encoding="utf-8") 
-    reader = csv.DictReader(io.open('g4g.csv', encoding="utf-8"))
-    dictobj = next(reader)
-    print(dictobj)
+    file = io.open('g4g.csv', encoding="utf-8")
+    reader = csv.DictReader(file)
+
+    on_next = False
+    case_list = []
+
+    #Create a dictionary from the file
+    for row in reader:
+        case_list.append(row)
+
+    #Find the next answer
+    result_to_return = ""
+    count=0
+    for row in case_list:
+        count+=1
+        if on_next:
+            row['Current'] = 'True'
+            on_next = False
+            result_to_return = row
+            break
+        if row['Current'] == 'True':
+            #Check if it's the last one
+            if count != len(case_list):
+                row['Current'] = 'False'
+            on_next = True
+
+
+    #If there's a next answer
+    if result_to_return != "":
+        #Print the next answer
+        print(result_to_return)
+        #Set the next answer in the file
+        file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
+        with file: 
+            # identifying header   
+            header = ['Number', 'Answer', 'Current'] 
+            writer = csv.DictWriter(file, fieldnames = header) 
+            writer.writeheader() 
+            # writing data row-wise into the csv file
+            for row in case_list:
+                writer.writerow(row)
+    else:
+        print("There is no next answer. Try to go to a previous answer with [python cli.py previous]")
+
+
+# Go to previous answer
+@main.command()
+def previous():
+    file = io.open('g4g.csv', encoding="utf-8")
+    reader = csv.DictReader(file)
+
+    on_previous = False
+    case_list = []
+
+    #Create a dictionary from the file
+    for row in reader:
+        case_list.append(row)
+
+    #Find the next answer
+    result_to_return = ""
+    count = 0
+    for row in reversed(case_list):
+        count+=1
+        if on_previous:
+            row['Current'] = 'True'
+            on_previous = False
+            result_to_return = row
+            break
+        if row['Current'] == 'True':
+            #Check if it's the last one
+            if count != len(case_list):
+                row['Current'] = 'False'
+            on_previous = True
+
+
+    #If there's a next answer
+    if result_to_return != "":
+        #Print the next answer
+        print(result_to_return)
+        #Set the next answer in the file
+        file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
+        with file: 
+            # identifying header   
+            header = ['Number', 'Answer', 'Current'] 
+            writer = csv.DictWriter(file, fieldnames = header) 
+            writer.writeheader() 
+            # writing data row-wise into the csv file
+            for row in case_list:
+                writer.writerow(row)
+    else:
+        print("There is no previous answer. Try to go to the next answer with [python cli.py next]")
+    
 if __name__ == "__main__":
     main()
