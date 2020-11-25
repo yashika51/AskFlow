@@ -18,7 +18,9 @@ from get_error import main
 class ask():
 
     def __init__(self,error_list):
-        self.key=os.environ.get("key")
+        self.key=os.environ.get('key')
+        self.client_id=os.environ.get('client_id')
+        self.answer_filter=os.environ.get('filter')
         #error_message is a list of errors
         self.error_list=error_list
         self.error_message=' '.join(error_list)
@@ -47,18 +49,21 @@ class ask():
         """
         ids=self.get_question_id()
 
-        query=f'https://api.stackexchange.com/2.2/questions/{ids}/answers?site=stackoverflow&filter=!9_bDE(fI5'
+        query=f'https://api.stackexchange.com/2.2/questions/{ids}/answers?client_id={self.client_id}&site=stackoverflow&key={self.key}&filter={self.answer_filter}'
 
         jData=requests.get(query)
         data=jData.json()
         answers=[]
         c=0
-        for i in data['items']:
-            ans=i.get('body')
-            soup = BeautifulSoup(ans,features="html.parser")
-            answers.append(soup.get_text().replace('\n',' '))
-            print(soup.get_text().replace('\n',' '))
-            c+=1
-            if c==count:
-                break
+       
+        for i in data['items']:   
+                ans=i.get('body')
+                soup = BeautifulSoup(ans,features="html.parser")
+                answers.append(soup.get_text().replace('\n',' '))
+                print(soup.get_text().replace('\n',' '))
+                c+=1
+                if c==count:
+                    break
+        
         return answers
+
