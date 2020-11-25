@@ -13,8 +13,7 @@ def main():
     """
     CLI for querying StackExchange API
     """
-
-f = Figlet(font='slant')
+    
 cprint(figlet_format('AskFlow CLI', font='slant'), "cyan")
 
 @main.command()
