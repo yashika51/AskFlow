@@ -4,6 +4,8 @@ from pyfiglet import Figlet
 #from get_error import main as get_error
 from get_error import run_command
 from search_answers import ask
+import csv
+import io
 
 __author__ = "Team 2 Sprint-4"
 
@@ -37,11 +39,20 @@ def search(query):
         print(relevant_info)
         a=ask(relevant_info)
         answers=a.get_answer()
+        print("")
+        print("First answer:")
         print(answers[0])
+        print("To show next answer type 'cli.py next'")
+        
         return(relevant_info)
     else:
         print("There was no error with the script")
 
-        
+@main.command()
+def next():
+    #file = io.open('g4g.csv', 'r', newline ='', encoding="utf-8") 
+    reader = csv.DictReader(io.open('g4g.csv', encoding="utf-8"))
+    dictobj = next(reader)
+    print(dictobj)
 if __name__ == "__main__":
     main()
