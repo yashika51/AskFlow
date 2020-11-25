@@ -13,7 +13,7 @@ def main():
     """
     CLI for querying StackExchange API
     """
-    
+
 cprint(figlet_format('AskFlow CLI', font='slant'), "cyan")
 
 @main.command()
@@ -38,7 +38,6 @@ def search(query):
         print(relevant_info)
         a=ask(relevant_info)
         answers=a.get_answer()
-        print(answers[0])
         return(relevant_info)
     else:
         print("There was no error with the script")
