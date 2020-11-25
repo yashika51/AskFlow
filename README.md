@@ -1,6 +1,6 @@
 # AskFlow
 
-<img src="AskFlow\AskFlow_logo.jpg"/>
+<img src="https://github.com/yashika51/AskFlow/blob/main/AskFlow_logo.jpg"/>
 
 StackOverflow is now just one command away. Let AskFlow handle your errors!
 
@@ -12,7 +12,7 @@ AskFlow is unique due its capability to search errors automatically in your scri
 
 Leave the heavy lifting on us!
 
-# Supported Platfoems
+# Supported Platforms
 
 As of now, AskFlow works smooth(as butter) on both **Windows** and **Linux**. Since Mac is selective, we are going to implement specific version for that in our future releases. 
 
