@@ -13,8 +13,10 @@ import urllib.request
 import json
 from bs4 import BeautifulSoup
 from get_error import main
+import click
 import csv
 import io
+
 
 class ask():
 
@@ -25,6 +27,8 @@ class ask():
         #error_message is a list of errors
         self.error_list=error_list
         self.error_message=' '.join(error_list)
+        #levy's hardcoded line
+        #self.error_message='unsupported operand type(s) for int and str'
     
     def get_question_id(self):
         """
@@ -41,8 +45,6 @@ class ask():
             question_ids.append(str(ques_id))
         #query accepts ids only delimited by semicolon
         return ';'.join(question_ids)
-
-
         
     def get_answer(self,count=5):
         """
@@ -56,12 +58,24 @@ class ask():
         data=jData.json()
         answers=[]
         c=0
-       
+
+
         for i in data['items']:   
                 ans=i.get('body')
                 soup = BeautifulSoup(ans,features="html.parser")
-                answers.append(soup.get_text().replace('\n',' '))
-                #print(soup.get_text().replace('\n',' '))
+
+                #levys
+                answers.append(soup.get_text())
+                '''
+                #moved to cli.py
+                print('\n')
+                click.echo(click.style(f"        ************** ", fg=colors[0]))
+                click.echo(click.style(soup.get_text(), fg=colors[1]))
+                '''
+                #arlyns
+                #answers.append(soup.get_text().replace('\n',' '))
+
+
                 c+=1
                 if c==count:
                     break

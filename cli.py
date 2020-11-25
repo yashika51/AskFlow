@@ -1,9 +1,11 @@
 import click
 import requests
-from pyfiglet import Figlet
+from pyfiglet import Figlet, figlet_format
+from termcolor import cprint
 #from get_error import main as get_error
 from get_error import run_command
 from search_answers import ask
+from colorama import init
 import csv
 import io
 
@@ -14,8 +16,8 @@ def main():
     """
     CLI for querying StackExchange API
     """
-f = Figlet(font='slant')
-print(f.renderText('AskFlow CLI'))
+    init(convert=True)
+    cprint(figlet_format('AskFlow CLI', font='slant'), "cyan")
 
 @main.command()
 @click.argument('query')
@@ -35,18 +37,27 @@ def search(query):
         relevant_info = error_message.split(":") #will split error into error type, and error info
 
         #Print all relevant search info
-        print("Relevant information for search: ")
-        print(relevant_info)
+        #print("Relevant information for search: ")
+        #print(relevant_info)
         a=ask(relevant_info)
         answers=a.get_answer()
-        print("")
-        print("First answer:")
-        print(answers[0])
-        print("To show next answer type 'cli.py next'")
+
+        #Print the first answer
+        print_answer(1, answers[0])
+        print("To show next answer type 'python cli.py next'")
         
         return(relevant_info)
     else:
         print("There was no error with the script")
+
+
+def print_answer(answer_num, answer):
+    colors = ['green','magenta']
+    print('\n')
+    print("Answer #" + str(answer_num))
+    click.echo(click.style(f"        ************** ", fg=colors[0]))
+    click.echo(click.style(answer, fg=colors[1]))
+
 
 @main.command()
 def next():
@@ -80,8 +91,9 @@ def next():
     #If there's a next answer
     if result_to_return != "":
         #Print the next answer
-        print("Answer #" + result_to_return['Number'])
-        print(result_to_return['Answer'])
+        print_answer(result_to_return['Number'], result_to_return['Answer'])
+        #print("Answer #" + result_to_return['Number'])
+        #print(result_to_return['Answer'])
         #Set the next answer in the file
         file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
         with file: 
@@ -129,8 +141,9 @@ def previous():
     #If there's a next answer
     if result_to_return != "":
         #Print the next answer
-        print("Answer #" + result_to_return['Number'])
-        print(result_to_return['Answer'])
+        print_answer(result_to_return['Number'], result_to_return['Answer'])
+        #print("Answer #" + result_to_return['Number'])
+        #print(result_to_return['Answer'])
         #Set the next answer in the file
         file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
         with file: 
