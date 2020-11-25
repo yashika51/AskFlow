@@ -36,7 +36,7 @@ class ask():
         jData=requests.get(url)
         data=jData.json()
         question_ids=[]
-        for i in data['items'][:6]:
+        for i in data['items']:
             ques_id=i.get('question_id')
             question_ids.append(str(ques_id))
         #query accepts ids only delimited by semicolon
@@ -55,15 +55,15 @@ class ask():
         answers=[]
         c=0
 
-        color = 'magenta'
+        colors = ['green','magenta']
 
         for i in data['items']:   
                 ans=i.get('body')
                 soup = BeautifulSoup(ans,features="html.parser")
                 answers.append(soup.get_text())
-                print('****************************************')
-                print(' ')
-                click.echo(click.style(soup.get_text(), fg=color))
+                print('\n')
+                click.echo(click.style(f"        ************** ", fg=colors[0]))
+                click.echo(click.style(soup.get_text(), fg=colors[1]))
                 c+=1
                 if c==count:
                     break
