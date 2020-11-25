@@ -1,9 +1,12 @@
+beautifulsoup4==4.9.3
 certifi==2020.11.8
 chardet==3.0.4
 click==7.1.2
+colorama==0.4.4
 idna==2.10
 pyfiglet==0.8.post1
+python-dotenv==0.15.0
 requests==2.25.0
+soupsieve==2.0.1
+termcolor==1.1.0
 urllib3==1.26.2
-python-dotenv==0.15.0 
-beautifulsoup4==4.9.3
