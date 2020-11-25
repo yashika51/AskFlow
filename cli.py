@@ -80,7 +80,8 @@ def next():
     #If there's a next answer
     if result_to_return != "":
         #Print the next answer
-        print(result_to_return)
+        print("Answer #" + result_to_return['Number'])
+        print(result_to_return['Answer'])
         #Set the next answer in the file
         file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
         with file: 
@@ -128,7 +129,8 @@ def previous():
     #If there's a next answer
     if result_to_return != "":
         #Print the next answer
-        print(result_to_return)
+        print("Answer #" + result_to_return['Number'])
+        print(result_to_return['Answer'])
         #Set the next answer in the file
         file = io.open('g4g.csv', 'w', newline ='', encoding="utf-8") 
         with file: 
