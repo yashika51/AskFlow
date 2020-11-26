@@ -50,10 +50,14 @@ In future we plan to add features providing more options to the user including
 - Answering from ther terminal 
 and much more.
 
-# Team
+
+## Made with ❤️ by:
 
 AskFlow is built by the fantastic team of three developers:
-- [Yashika](https://github.com/yashika51/) - [Arlyn](https://github.com/Acrylami/) - [Levy](https://github.com/Levy-Naibei)
+
+|                          Yashika Sharma                         |                         Arlyn                       |                          Levy Naibei
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| [<img src="https://avatars0.githubusercontent.com/u/34909206?s=460&u=6f0efbdf5e4df90a99611c99603efa120251090c&v=4" width="100px;"/>](https://github.com/yashika51)<br />[💻](yashika.codes) [🤝](https://www.linkedin.com/in/yashika51/) | [<img src="https://avatars1.githubusercontent.com/u/10408164?s=400&u=041c3d8c84a9720da027caa45b9ae61f1116f8fe&v=4" width="100px;"/>](https://github.com/Acrylami/)<br />[🌍](https://github.com/Acrylami/) [💻](https://github.com/Acrylami/)| [<img src="https://avatars2.githubusercontent.com/u/26874683?s=400&u=b762574181dfca4cf54f0861cc4a05939c38c23d&v=4" width="100px;"/>](https://github.com/Levy-Naibei)<br /> [💻](https://github.com/Levy-Naibei) |
 
 # Feedback
 
