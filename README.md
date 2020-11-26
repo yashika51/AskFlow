@@ -28,6 +28,8 @@ AskFlow will detect errors and will return answers accordingly.
 
 <img src="https://github.com/yashika51/AskFlow/blob/main/screenshots/search.png"/>
 
+Note: To use your own Key, refer `.env.sample` file. Generate your API key from Stackexchange API. Refer to wiki for more [information](https://github.com/yashika51/AskFlow/wiki/Using-Stack-API). This will increase the daily quota from 300 to 10k calls.
+
 ## Extra Features
 
 To navigate between the answers
@@ -71,6 +73,8 @@ AskFlow is built by the fantastic team of three developers:
 We always love to hear suggestions and stories. If you liked AskFlow, support us by giving a :star:. If you'd like to reach out, you can find us from our individual Github profiles. 
 
 # Other Links
+
+AskFlow CLI is a published package on pypi find it here https://pypi.org/project/AskFlow-CLI/1.0.0/
 
 Find us on Devpost https://devpost.com/software/askflow
 
