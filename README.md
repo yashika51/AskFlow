@@ -34,6 +34,8 @@ Note: To use your own Key, refer `.env.sample` file. Generate your API key from 
 
 AskFlow is pip installable. `pip install AskFlow-CLI==1.0.0` to install the latest version.
 
+<img src="https://github.com/yashika51/AskFlow/blob/main/screenshots/pip.png"/>
+
 ## Extra Features
 
 To navigate between the answers
