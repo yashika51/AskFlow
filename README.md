@@ -26,7 +26,7 @@ To get access to AskFlow, follow these steps:
 
 AskFlow will detect errors and will return answers accordingly.
 
-<img src=""/>
+<img src="https://github.com/yashika51/AskFlow/blob/main/screenshots/search.png"/>
 
 ## Extra Features
 
@@ -34,11 +34,11 @@ To navigate between the answers
 
 1. `next` to move on to the next answer. Type `python cli.py next` in your terminal.
 
-<img src=""/>
+<img src="https://github.com/yashika51/AskFlow/blob/main/screenshots/next.png"/>
 
 2. `prev` to move on to the prev answer. Type `python cli.py previous` in your terminal.
 
-<img src=""/>
+<img src="https://github.com/yashika51/AskFlow/blob/main/screenshots/previous.png"/>
 
 # TL:DR; Specialities
 
