@@ -28,7 +28,11 @@ AskFlow will detect errors and will return answers accordingly.
 
 <img src="https://github.com/yashika51/AskFlow/blob/main/screenshots/search.png"/>
 
-Note: To use your own Key, refer `.env.sample` file. Generate your API key from Stackexchange API. Refer to wiki for more [information](https://github.com/yashika51/AskFlow/wiki/Using-Stack-API). This will increase the daily quota from 300 to 10k calls.
+Note: To use your own Key, refer `.env.sample` file. Generate your API key from [Stackexchange API website](https://api.stackexchange.com/). Refer [wiki](https://github.com/yashika51/AskFlow/wiki/Using-Stack-API) for more information. This will increase the daily quota from 300 to 10k calls.
+
+## pypi Package
+
+AskFlow is pip installable. `pip install AskFlow-CLI==1.0.0` to install the latest version.
 
 ## Extra Features
 
