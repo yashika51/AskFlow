@@ -1,7 +1,7 @@
 env
 *.pyc
 #ignore API Key
-.env
+#.env
 #pycache
 __pycache__
 #vs code
