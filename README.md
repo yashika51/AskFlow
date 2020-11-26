@@ -26,6 +26,11 @@ To get access to AskFlow, follow these steps:
 
 AskFlow will detect errors and will return answers accordingly.
 
+# Published Package in PyPI
+
+- Install AskFlow CLI from [Live AskFlow-CLI](https://pypi.org/project/AskFlow-CLI/1.0.0/)
+- To test AskFlow install from [AskFlow Test package](https://test.pypi.org/project/AskFlow-CLI/)
+
 ## Extra Features
 
 To navigate between the answers

@@ -12,6 +12,7 @@ import io
 __author__ = "Team 2 Sprint-4"
 
 @click.group()
+@click.version_option("1.0.0")
 def main():
     """
     CLI for querying StackExchange API
