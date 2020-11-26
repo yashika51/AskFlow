@@ -26,12 +26,19 @@ To get access to AskFlow, follow these steps:
 
 AskFlow will detect errors and will return answers accordingly.
 
+<img src=""/>
+
 ## Extra Features
 
 To navigate between the answers
 
 1. `next` to move on to the next answer. Type `python cli.py next` in your terminal.
+
+<img src=""/>
+
 2. `prev` to move on to the prev answer. Type `python cli.py previous` in your terminal.
+
+<img src=""/>
 
 # TL:DR; Specialities
 
