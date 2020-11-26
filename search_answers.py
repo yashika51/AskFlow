@@ -23,7 +23,7 @@ class ask():
     def __init__(self,error_list):
         self.key=os.environ.get('key')
         self.client_id=os.environ.get('client_id')
-        self.answer_filter=os.environ.get('filter_answer')
+        self.answer_filter='!bN4iJfRmwXV)w1'
         #error_message is a list of errors
         self.error_list=error_list
         self.error_message=' '.join(error_list)
@@ -52,7 +52,11 @@ class ask():
         """
         ids=self.get_question_id()
 
-        query=f'https://api.stackexchange.com/2.2/questions/{ids}/answers?client_id={self.client_id}&site=stackoverflow&key={self.key}&filter={self.answer_filter}'
+        if self.key:
+            query=f'https://api.stackexchange.com/2.2/questions/{ids}/answers?client_id={self.client_id}&site=stackoverflow&key={self.key}&filter={self.answer_filter}'
+        else:
+            query=f'https://api.stackexchange.com/2.2/questions/{ids}/answers?&site=stackoverflow&filter={self.answer_filter}'
+
 
         jData=requests.get(query)
         data=jData.json()
