@@ -23,7 +23,7 @@ class ask():
     def __init__(self,error_list):
         self.key=os.environ.get('key')
         self.client_id=os.environ.get('client_id')
-        self.answer_filter=os.environ.get('filter')
+        self.answer_filter=os.environ.get('filter_answer')
         #error_message is a list of errors
         self.error_list=error_list
         self.error_message=' '.join(error_list)
